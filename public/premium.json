@@ -1,0 +1,66 @@
+[
+    {
+      "biodataId": 1,
+      "biodataType": "Male",
+      "profileImage": "https://via.placeholder.com/150",
+      "permanentDivision": "Dhaka",
+      "age": 30,
+      "occupation": "Job",
+      "category": "Premium"
+    },
+    {
+      "biodataId": 2,
+      "biodataType": "Female",
+      "profileImage": "https://via.placeholder.com/150",
+      "permanentDivision": "Chattagram",
+      "age": 23,
+      "occupation": "Student",
+      "category": "Normal Member"
+    },
+    {
+      "biodataId": 3,
+      "biodataType": "Male",
+      "profileImage": "https://via.placeholder.com/150",
+      "permanentDivision": "Rangpur",
+      "age": 45,
+      "occupation": "Job",
+      "category": "Premium"
+    },
+    {
+      "biodataId": 4,
+      "biodataType": "Female",
+      "profileImage": "https://via.placeholder.com/150",
+      "permanentDivision": "Barisal",
+      "age": 30,
+      "occupation": "House wife",
+      "category": "Normal"
+    },
+    {
+      "biodataId": 5,
+      "biodataType": "Male",
+      "profileImage": "https://via.placeholder.com/150",
+      "permanentDivision": "Khulna",
+      "age": 23,
+      "occupation": "Student",
+      "category": "Normal"
+    },
+    {
+      "biodataId": 6,
+      "biodataType": "Female",
+      "profileImage": "https://via.placeholder.com/150",
+      "permanentDivision": "Sylhet",
+      "age": 45,
+      "occupation": "House wife",
+      "category": "Premium"
+    },
+    {
+      "biodataId": 7,
+      "biodataType": "Male",
+      "profileImage": "https://via.placeholder.com/150",
+      "permanentDivision": "Mymensingh",
+      "age": 30,
+      "occupation": "Job",
+      "category": "Normal"
+    }
+  ]
+  
