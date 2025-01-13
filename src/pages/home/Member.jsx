@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import MenuItem from "../../Components/Shared/MenuItem";
+import Members from "../../components/members";
 
 
 const Member = () => {
-    const [member, setMember] = useState([]);
+    const [members, setMembers] = useState([]);
     useEffect(() => {
         fetch('premium.json')
             .then(res => res.json())
             .then(data => {
-                const popularItems = data.filter(item => item.category === 'popular');
-                setMenu(popularItems)
+                const premiumMember = data.filter(member => member.category === 'premium');
+                setMembers(premiumMember)
             })
     }, [])
     return (
@@ -17,14 +17,14 @@ const Member = () => {
             
             <div className="grid md:grid-cols-2 gap-10">
                 {
-                    menu.map(item => <MenuItem
-                        key={item._id}
-                        item={item}
-                    ></MenuItem>)
+                    members.map(member => <Members
+                        key={member._id}
+                        member={member}
+                    ></Members>)
                 }
             </div>
             <div className="flex justify-center">
-            <button className="btn btn-outline border-0 border-b-4 mt-5 uppercase">ORDER YOUR FAVOURITE FOOD</button>
+            <button className="btn btn-outline border-0 border-b-4 mt-5 uppercase font-bold"> view profile </button>
 
             </div>
         </section>
