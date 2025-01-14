@@ -27,9 +27,9 @@ const SuccessStories = () => {
   );
 
   return (
-    <section className="py-10 bg-gray-50">
+    <section className="py-10 bg-gray-50 w-11/12 mx-auto my-5">
       <div className="w-11/12 mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10">Success Stories</h2>
+        <h2 className="text-3xl font-bold text-center mb-10 italic">----Success Stories----</h2>
         <div className="space-y-12">
           {sortedStories.map((story, index) => (
             <div

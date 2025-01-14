@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Biodatas from "./pages/Biodatas";
+import Details from "./pages/details/Details";
   
   export const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ import Biodatas from "./pages/Biodatas";
         {
           path: '/about',
           element:<About></About>
+        },
+        {
+          path: '/details',
+          element:<Details></Details>
         }
       ]
     },
