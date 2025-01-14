@@ -22,7 +22,11 @@ function NavScrollExample() {
             <Nav.Link as={Link} to="/about">About Us</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
           </Nav>
+          <div className='flex gap-2'>
           <Button as={Link} to="/login" className='py-2'>Login</Button>
+          <Button as={Link} to="/register" className='py-2'>Register</Button>
+          </div>
+
         </Navbar.Collapse>
       </Container>
     </Navbar>

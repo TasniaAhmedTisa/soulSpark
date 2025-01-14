@@ -6,7 +6,7 @@ const MemberList = () => {
     const [sortOrder, setSortOrder] = useState("ascending");
 
     useEffect(() => {
-        fetch('/premium.json')
+        fetch('/Biodata.json')
             .then((res) => {
                 if (!res.ok) {
                     throw new Error("Failed to fetch data");
@@ -15,7 +15,8 @@ const MemberList = () => {
             })
             .then((data) => {
                 const premiumMembers = data.filter(member => member.category === "Premium");
-                setMembers(premiumMembers);            })
+                setMembers(premiumMembers);           
+             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
             });
@@ -40,7 +41,7 @@ const MemberList = () => {
     };
 
     return (
-        <section className="my-8 w-11/12 mx-auto">
+        <section className="my-8 w-11/12 mx-auto mb-5">
                             <h1 className="text-2xl font-bold text-center italic">----Premium Members----</h1>
 
             <div className="flex justify-between items-center mb-5">
@@ -48,7 +49,7 @@ const MemberList = () => {
                     onClick={toggleSortOrder}
                     className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition-all"
                 >
-                    Sort: {sortOrder === "ascending" ? "Ascending" : "Descending"}
+                    Sort: {sortOrder === "ascending" ? "Descending" : "Ascending"}
                 </button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

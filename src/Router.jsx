@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Biodatas from "./pages/Biodatas";
 import Details from "./pages/details/Details";
+import Register from "./pages/Register";
   
   export const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ import Details from "./pages/details/Details";
           path: 'login',
           element:<Login></Login>
             
+        },
+        {
+          path: '/register',
+          element:<Register></Register>
         },
         {
           path: '/contact',
