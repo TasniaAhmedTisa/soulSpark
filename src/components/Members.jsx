@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Members = ({ member }) => {
+    
     const { biodataId, biodataType, profileImage, permanentDivision, occupation, age } = member;
 
     return (
@@ -8,7 +9,7 @@ const Members = ({ member }) => {
             <div className="flex flex-col items-center">
                 <img
                     className="w-24 h-24 rounded-full border-4 border-blue-500 mb-4"
-                    src={profileImage || "https://via.placeholder.com/150"}
+                    src={profileImage}
                     alt={`${biodataType} profile`}
                 />
                 <div className="text-center">
@@ -29,7 +30,7 @@ const Members = ({ member }) => {
             </div>
 
             <div className="flex justify-center mt-2">
-                <Link to='/details'><button className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition-all">
+                <Link to={`/biodata/${biodataId}`}><button className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition-all">
                     View Profile
                 </button></Link>
             </div>

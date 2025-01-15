@@ -8,6 +8,7 @@
       "occupation": "Job",
       "category": "Premium"
     },
+
     {
       "biodataId": 2,
       "biodataType": "Female",
@@ -15,7 +16,7 @@
       "permanentDivision": "Chattagram",
       "age": 23,
       "occupation": "Student",
-      "category": "Normal Member"
+      "category": "Normal"
     },
     {
       "biodataId": 3,
@@ -89,6 +90,96 @@
         "age": 35,
         "occupation": "Job",
         "category": "Premium"
+      },
+      {
+        "biodataId": 11,
+        "biodataType": "Male",
+        "profileImage": "https://i.ibb.co/6s4ZZ2B/male-profile.jpg",
+        "permanentDivision": "Rangpur",
+        "age": 30,
+        "occupation": "Job",
+        "category": "Normal"
+      },
+      {
+        "biodataId": 12,
+        "biodataType": "Male",
+        "profileImage": "https://i.ibb.co/6s4ZZ2B/male-profile.jpg",
+        "permanentDivision": "Dhaka",
+        "age": 35,
+        "occupation": "Job",
+        "category": "Normal"
+      },
+      {
+        "biodataId": 13,
+        "biodataType": "Male",
+        "profileImage": "https://i.ibb.co/6s4ZZ2B/male-profile.jpg",
+        "permanentDivision": "Chattagram",
+        "age": 30,
+        "occupation": "Student",
+        "category": "Normal"
+      },
+      {
+        "biodataId": 14,
+        "biodataType": "Female",
+        "profileImage": "https://i.ibb.co/6s4ZZ2B/male-profile.jpg",
+        "permanentDivision": "Dhaka",
+        "age": 25,
+        "occupation": "Job",
+        "category": "Normal"
+      },
+      {
+        "biodataId": 15,
+        "biodataType": "Male",
+        "profileImage": "https://i.ibb.co/6s4ZZ2B/male-profile.jpg",
+        "permanentDivision": "Barisal",
+        "age": 30,
+        "occupation": "Job",
+        "category": "Normal"
+      },
+      {
+        "biodataId": 16,
+        "biodataType": "Female",
+        "profileImage": "https://i.ibb.co/6s4ZZ2B/male-profile.jpg",
+        "permanentDivision": "Rangpur",
+        "age": 24,
+        "occupation": "Student",
+        "category": "Normal"
+      },
+      {
+        "biodataId": 17,
+        "biodataType": "Male",
+        "profileImage": "https://i.ibb.co/6s4ZZ2B/male-profile.jpg",
+        "permanentDivision": "Dhaka",
+        "age": 34,
+        "occupation": "Job",
+        "category": "Normal"
+      },
+      {
+        "biodataId": 18,
+        "biodataType": "Male",
+        "profileImage": "https://i.ibb.co/6s4ZZ2B/male-profile.jpg",
+        "permanentDivision": "Khulna",
+        "age": 30,
+        "occupation": "Job",
+        "category": "Normal"
+      },
+      {
+        "biodataId": 19,
+        "biodataType": "Male",
+        "profileImage": "https://i.ibb.co/6s4ZZ2B/male-profile.jpg",
+        "permanentDivision": "Sylhet",
+        "age": 30,
+        "occupation": "Job",
+        "category": "Normal"
+      },
+      {
+        "biodataId": 20,
+        "biodataType": "Male",
+        "profileImage": "https://i.ibb.co/6s4ZZ2B/male-profile.jpg",
+        "permanentDivision": "Dhaka",
+        "age": 32,
+        "occupation": "Job",
+        "category": "Normal"
       }
     
     

@@ -30,6 +30,8 @@ function NavScrollExample() {
             <Nav.Link as={Link} to="/biodatas">Biodatas</Nav.Link>
             <Nav.Link as={Link} to="/about">About Us</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
+            {user && <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>}
+
           </Nav>
           <div className='flex gap-2'>
           

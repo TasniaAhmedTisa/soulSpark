@@ -10,6 +10,7 @@ import Biodatas from "./pages/Biodatas";
 import Details from "./pages/details/Details";
 import Register from "./pages/Register";
 import PrivateRoutes from "./PrivateRoutes";
+import Dashboard from "./pages/dashboard/Dashboard";
   
   export const router = createBrowserRouter([
     {
@@ -34,8 +35,12 @@ import PrivateRoutes from "./PrivateRoutes";
           element:<PrivateRoutes><About></About></PrivateRoutes>
         },
         {
-          path: '/details',
+          path: '/biodata/:id',
           element:<PrivateRoutes><Details></Details></PrivateRoutes>
+        },
+        {
+          path: '/dashboard',
+          element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
         }
       ]
 

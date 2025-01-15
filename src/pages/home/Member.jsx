@@ -55,7 +55,10 @@ const MemberList = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredMembers.map((member) => (
+                    <div key={member.biodataId}>                 
                     <Members key={member.biodataId} member={member} />
+    
+                  </div>
                 ))}
             </div>
         </section>

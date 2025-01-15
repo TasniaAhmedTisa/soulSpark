@@ -20,7 +20,7 @@ const BiodataCard = ({ biodata }) => {
                 <p className="text-red-500 font-bold">Age: {age}</p>
             </div>
             <div className="mt-4 text-center">
-                <Link to={`/biodatas/${biodataId}`}>
+                <Link to={`/biodata/${biodataId}`}>
                     <button className="bg-blue-500 text-white px-4 py-2 rounded-full">
                         View Profile
                     </button>
