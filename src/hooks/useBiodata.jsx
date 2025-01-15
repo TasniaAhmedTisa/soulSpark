@@ -5,7 +5,7 @@ const useBiodata = () =>{
     const [loading, setLoading] = useState(true)
     
         useEffect(() => {
-            fetch('/Biodata.json')
+            fetch('http://localhost:5000/biodata')
                 .then(res => res.json())
                 .then(data => {
                     setMembers(data)

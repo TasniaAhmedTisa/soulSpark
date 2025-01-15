@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Biodatas from "./pages/Biodatas";
 import Details from "./pages/details/Details";
 import Register from "./pages/Register";
+import PrivateRoutes from "./PrivateRoutes";
   
   export const router = createBrowserRouter([
     {
@@ -23,27 +24,29 @@ import Register from "./pages/Register";
           path:'/biodatas',
           element:<Biodatas></Biodatas>
         },
-        {
-          path: 'login',
-          element:<Login></Login>
-            
-        },
-        {
-          path: '/register',
-          element:<Register></Register>
-        },
+        
         {
           path: '/contact',
           element:<Contact></Contact>
         },
         {
           path: '/about',
-          element:<About></About>
+          element:<PrivateRoutes><About></About></PrivateRoutes>
         },
         {
           path: '/details',
-          element:<Details></Details>
+          element:<PrivateRoutes><Details></Details></PrivateRoutes>
         }
       ]
+
+    },
+    {
+      path: 'login',
+      element:<Login></Login>
+        
+    },
+    {
+      path: '/register',
+      element:<Register></Register>
     },
   ]);

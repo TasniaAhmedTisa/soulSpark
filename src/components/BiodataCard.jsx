@@ -12,6 +12,7 @@ const BiodataCard = ({ biodata }) => {
                 className="w-24 h-24 rounded-full mx-auto mb-4"
             />
             <div className="text-center">
+
                 <p className="font-bold">ID: {biodataId}</p>
                 <p className="text-blue-500 uppercase">{biodataType}</p>
                 <p>Division: {permanentDivision}</p>
@@ -23,6 +24,7 @@ const BiodataCard = ({ biodata }) => {
                     <button className="bg-blue-500 text-white px-4 py-2 rounded-full">
                         View Profile
                     </button>
+
                 </Link>
             </div>
         </div>

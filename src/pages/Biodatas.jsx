@@ -8,7 +8,7 @@ const Biodatas = () => {
 
     // Fetch biodatas from a JSON file in the public folder
     useEffect(() => {
-        fetch('/Biodata.json')
+        fetch('http://localhost:5000/biodata')
             .then((res) => res.json())
             .then((data) => {
                 setBiodatas(data);
