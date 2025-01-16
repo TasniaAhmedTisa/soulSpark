@@ -37,9 +37,9 @@ const Details = () => {
     <div className="container mx-auto py-6">
       <h1 className="text-3xl font-bold text-center mb-4">{biodata.name}'s Biodata</h1>
 
-      <div className="flex flex-col lg:flex-row gap-6">
+      <div className="flex flex-col lg:flex-row gap-6 justify-center mx-auto">
         {/* Biodata Details */}
-        <div className="w-full lg:w-3/4 p-4 bg-white shadow-md rounded-md">
+        <div className="w-full lg:w-3/4 p-4 bg-white shadow-md rounded-md ">
           <p><strong>Age:</strong> {biodata.age}</p>
           <p><strong>Type:</strong> {biodata.biodataType}</p>
           <p><strong>Division:</strong> {biodata.permanentDivision}</p>
@@ -52,10 +52,7 @@ const Details = () => {
           ) : (
             <p className="text-red-500 italic">Contact information is visible only to premium members.</p>
           )}
-        </div>
-
-        {/* Actions */}
-        <div className="w-full lg:w-1/4 flex flex-col gap-4">
+          <div className="w-full lg:w-1/4 flex flex-col gap-4">
           <button
             className="bg-blue-500 text-white py-2 px-4 rounded shadow-md hover:bg-blue-600"
             onClick={handleAddToFavorites}
@@ -71,6 +68,10 @@ const Details = () => {
             </button>
           )}
         </div>
+        </div>
+
+        {/* Actions */}
+        
       </div>
 
       {/* Similar Biodatas */}

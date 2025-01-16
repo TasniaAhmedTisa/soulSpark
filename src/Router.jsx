@@ -47,7 +47,7 @@ import NotFoundPage from "./components/NotFoundPage";
         },
         {
           path: '/checkout/:id',
-          element:<Checkout></Checkout>
+          element:<PrivateRoutes><Checkout></Checkout></PrivateRoutes>
         },
       ]
 
