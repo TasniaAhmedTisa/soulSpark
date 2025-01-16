@@ -13,6 +13,9 @@ import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Checkout from "./pages/Checkout/Checkout";
 import NotFoundPage from "./components/NotFoundPage";
+import EditBio from "./pages/dashboard/EditBio";
+import FavBio from "./pages/dashboard/FavBio";
+import MyContactReq from "./pages/dashboard/MyContactReq";
   
   export const router = createBrowserRouter([
     {
@@ -43,7 +46,22 @@ import NotFoundPage from "./components/NotFoundPage";
         {
           path: '/dashboard',
           element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+          children:[
+            
+          ]
           
+        },
+        {
+          path: '/dashboard/edit-biodata',
+          element:<EditBio></EditBio>
+        },
+        {
+          path:'/dashboard/my-contact-requests',
+          element:<MyContactReq></MyContactReq>
+        },
+        {
+          path:'/dashboard/favourites',
+          element:<FavBio></FavBio>
         },
         {
           path: '/checkout/:id',
