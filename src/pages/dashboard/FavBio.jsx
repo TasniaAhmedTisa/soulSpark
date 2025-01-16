@@ -8,13 +8,12 @@ const FavBio = () => {
 
   useEffect(() => {
     if (user && user.email) {
-      // Fetch favourite biodatas
       fetch(`http://localhost:5000/favourites?userEmail=${user.email}`) // Replace with actual user email
         .then((res) => res.json())
         .then((data) => setFavourites(data))
         .catch((err) => console.error("Error fetching favourites:", err));
     }
-  }, [user]); // Only run this effect when user changes
+  }, [user]); 
 
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/favourites/${id}`, {

@@ -12,7 +12,6 @@ const MyContactReq = () => {
       return;
     }
 
-    // Fetch contact requests
     fetch(`http://localhost:5000/contact-requests?userEmail=${user.email}`)
       .then((res) => {
         if (!res.ok) {

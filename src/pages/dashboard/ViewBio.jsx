@@ -5,7 +5,6 @@ const ViewBio = () => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    // Fetch user's biodata
     fetch("http://localhost:5000/biodata/1") // Replace with the actual user's biodata ID
       .then((res) => res.json())
       .then((data) => setBiodata(data))

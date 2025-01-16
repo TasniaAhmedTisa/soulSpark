@@ -7,7 +7,6 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [biodata, setBiodata] = useState(null);
 
-  // Fetch user's biodata when component loads
   useEffect(() => {
     if (user) {
       fetch(`http://localhost:5000/biodata/${user.biodataId}`)
@@ -17,7 +16,6 @@ const Dashboard = () => {
     }
   }, [user]);
 
-  // Logout handler
   const handleLogOut = () => {
     logOut()
     .then(() =>{})
