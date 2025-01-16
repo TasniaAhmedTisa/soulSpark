@@ -11,6 +11,8 @@ import Details from "./pages/details/Details";
 import Register from "./pages/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "./pages/dashboard/Dashboard";
+import Checkout from "./pages/Checkout/Checkout";
+import NotFoundPage from "./components/NotFoundPage";
   
   export const router = createBrowserRouter([
     {
@@ -40,11 +42,17 @@ import Dashboard from "./pages/dashboard/Dashboard";
         },
         {
           path: '/dashboard',
-          element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
-        }
+          element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+          
+        },
+        {
+          path: '/checkout/:id',
+          element:<Checkout></Checkout>
+        },
       ]
 
     },
+    
     {
       path: 'login',
       element:<Login></Login>
@@ -54,4 +62,9 @@ import Dashboard from "./pages/dashboard/Dashboard";
       path: '/register',
       element:<Register></Register>
     },
+    {
+      path: '*',
+      element:<NotFoundPage></NotFoundPage>
+    }
+    
   ]);

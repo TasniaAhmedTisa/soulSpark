@@ -7,7 +7,10 @@ const SimilarBiodatas = ({ biodataType }) => {
   useEffect(() => {
     fetch(`http://localhost:5000/biodata?biodataType=${biodataType}`)
       .then((res) => res.json())
-      .then((data) => setSimilarBiodatas(data.slice(0, 3))); // Show only 3
+      .then((data) => {
+        console.log(data)
+        setSimilarBiodatas(data.slice(0, 3))
+      }); // Show only 3
   }, [biodataType]);
 
   return (
