@@ -16,6 +16,7 @@ import NotFoundPage from "./components/NotFoundPage";
 import EditBio from "./pages/dashboard/EditBio";
 import FavBio from "./pages/dashboard/FavBio";
 import MyContactReq from "./pages/dashboard/MyContactReq";
+import ViewBio from "./pages/dashboard/ViewBio";
   
   export const router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ import MyContactReq from "./pages/dashboard/MyContactReq";
         {
           path: '/dashboard/edit-biodata',
           element:<EditBio></EditBio>
+        },
+        {
+          path:'/viewbiodata',
+          element:<ViewBio></ViewBio>
         },
         {
           path:'/dashboard/my-contact-requests',

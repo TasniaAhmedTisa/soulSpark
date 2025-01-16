@@ -51,7 +51,7 @@ const Dashboard = () => {
               <p><strong>Type:</strong> {biodata.biodataType}</p>
               <p><strong>Occupation:</strong> {biodata.occupation}</p>
               <Link
-                to={`/biodata/${biodata.biodataId}`}
+                to={`/viewbiodata`}
                 className="text-blue-500 hover:text-blue-700"
               >
                 View Details

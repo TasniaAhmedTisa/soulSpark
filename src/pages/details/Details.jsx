@@ -21,9 +21,32 @@ const Details = () => {
   }, [id]);
 
   const handleAddToFavorites = () => {
-    // Add biodata to favorites (make API call or update local state)
-    console.log(`${biodata.name} added to favorites!`);
+    const favoriteBiodata = {
+      biodataId: biodata.biodataId,
+      name: biodata.name,
+      permanentAddress: biodata.permanentDivision,  // Or whatever address field you have
+      occupation: biodata.occupation,
+      userEmail: user.email, // Assuming the user is logged in and you have access to the user's email
+    };
+  
+    fetch("http://localhost:5000/favourites", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(favoriteBiodata),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Added to favorites", data);
+        alert("Biodata added to favorites!");
+      })
+      .catch((err) => {
+        console.error("Error adding to favorites", err);
+        alert("Error adding to favorites. Please try again.");
+      });
   };
+  
 
   const handleRequestContact = () => {
     navigate(`/checkout/${id}`);
