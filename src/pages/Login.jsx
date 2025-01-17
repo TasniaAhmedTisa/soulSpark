@@ -4,16 +4,31 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from 'sweetalert2'
+import useAuth from "../hooks/useAuth";
+import { signInWithPopup } from "firebase/auth";
+
 
 
 function login() {
-    //const {googleSignIn} = useAuth()
+    const {googleSignIn, signIn} = useAuth()
     const navigate = useNavigate()
 
-    const {signIn} = useContext(AuthContext)
     const location = useLocation()
 
     const from = location.state?.from?.pathname || "/";
+
+     // Handle Google Sign-In with Popup
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((user) => {
+        Swal.fire("Successfully Login", "Google Sign-In Successful", "success");
+        navigate(from, { replace: true }); // Redirect user to the previous page or home
+      })
+      .catch((error) => {
+        console.error("Google Sign-In Error:", error);
+        Swal.fire("Error", "Google Sign-In Failed", "error");
+      });
+  };
 
     const handleLogin = event =>{
         event.preventDefault()
@@ -36,7 +51,11 @@ function login() {
           });
           navigate(from, { replace: true });
         })
+
+
 }
+
+
         
 
   return (
@@ -71,7 +90,7 @@ function login() {
       <div className="divider d-flex align-items-center my-4">
       <p className="text-center fw-bold mx-3 mb-0">Or</p>
     </div>
-    <MDBBtn className="mb-2 w-100" size="lg" style={{backgroundColor: '#dd4b39'}}>
+    <MDBBtn onClick={handleGoogleSignIn} className="mb-2 w-100" size="lg" style={{backgroundColor: '#dd4b39'}}>
           <MDBIcon fab icon="google" className="mx-2"/>
           Sign in with google
         </MDBBtn>

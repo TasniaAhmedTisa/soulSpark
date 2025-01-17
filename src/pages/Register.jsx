@@ -1,23 +1,54 @@
 import { FaGoogle } from "react-icons/fa";
 import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 
 
 const  Register = () => {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+
+  const from = location.state?.from?.pathname || "/";
 
     const {register, handleSubmit, formState: {errors}} = useForm()
-    const {createUser} = useContext(AuthContext)
+    const {createUser, googleSignIn} = useAuth()
+
     const onSubmit = data => {
         console.log(data)
         createUser(data.email, data.password)
         .then(result =>{
           const loggedUser = result.user
           console.log(loggedUser)
+          Swal.fire({
+                        title: 'User Registration Successful.',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    });
+                    navigate(from, { replace: true });
+
         })
       }
+       // Google Sign In handler
+   const handleGoogleSignIn = () => {
+       googleSignIn()
+         .then((user) => {
+           Swal.fire("Successfully signIn", "Google Sign-In Successful", "success");
+           navigate(from, { replace: true }); 
+         })
+         .catch((error) => {
+           console.error("Google Sign-In Error:", error);
+           Swal.fire("Error", "Google Sign-In Failed", "error");
+         });
+     };
 
   return (
     <div className='w-11/12 mx-auto'>
@@ -60,7 +91,7 @@ const  Register = () => {
       <div className="divider d-flex align-items-center my-4">
       <p className="text-center fw-bold mx-3 mb-0">Or</p>
     </div>
-    <MDBBtn className="mb-2 w-100" size="lg" style={{backgroundColor: '#dd4b39'}}>
+    <MDBBtn onClick={handleGoogleSignIn} className="mb-2 w-100" size="lg" style={{backgroundColor: '#dd4b39'}}>
           <MDBIcon fab icon="google" className="mx-2"/>
           Sign in with google
         </MDBBtn>
