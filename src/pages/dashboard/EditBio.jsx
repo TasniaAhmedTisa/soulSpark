@@ -67,7 +67,7 @@ const EditBio = () => {
 
   return (
     <div className="container mx-auto py-6">
-      <h1 className="text-3xl font-bold text-center mb-4">Edit Biodata</h1>
+      <h1 className="text-3xl font-bold text-center mb-4">Edit or Create Biodata</h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>

@@ -48,26 +48,28 @@ import ViewBio from "./pages/dashboard/ViewBio";
           path: '/dashboard',
           element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
           children:[
+            {
+              path: '/dashboard/edit-biodata',
+              element:<EditBio></EditBio>
+            },
+            {
+              path:'/dashboard/view-biodata',
+              element:<ViewBio></ViewBio>
+            },
+            {
+              path:'/dashboard/my-contact-requests',
+              element:<MyContactReq></MyContactReq>
+            },
+            {
+              path:'/dashboard/favourites',
+              element:<FavBio></FavBio>
+            },
             
           ]
           
         },
-        {
-          path: '/dashboard/edit-biodata',
-          element:<EditBio></EditBio>
-        },
-        {
-          path:'/viewbiodata',
-          element:<ViewBio></ViewBio>
-        },
-        {
-          path:'/dashboard/my-contact-requests',
-          element:<MyContactReq></MyContactReq>
-        },
-        {
-          path:'/dashboard/favourites',
-          element:<FavBio></FavBio>
-        },
+        
+        
         {
           path: '/checkout/:id',
           element:<PrivateRoutes><Checkout></Checkout></PrivateRoutes>

@@ -10,7 +10,7 @@ const SimilarBiodatas = ({ biodataType }) => {
       .then((data) => {
         console.log(data)
         setSimilarBiodatas(data.slice(0, 3))
-      }); // Show only 3
+      }); 
   }, [biodataType]);
 
   return (

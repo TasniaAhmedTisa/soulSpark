@@ -1,96 +1,81 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Dashboard = () => {
-  const { user, isPremiumMember, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const [isAdmin, setIsAdmin] = useState(false); // Assuming role information is in `user`
+
   const navigate = useNavigate();
-  const [biodata, setBiodata] = useState(null);
 
   useEffect(() => {
-    if (user) {
-      fetch(`http://localhost:5000/biodata/${user.biodataId}`)
-        .then((res) => res.json())
-        .then((data) => setBiodata(data))
-        .catch((err) => console.error("Error fetching biodata:", err));
+    if (user && user.role === "admin") {
+      setIsAdmin(true);
     }
   }, [user]);
 
-  const handleLogOut = () => {
+  const handleLogout = () => {
     logOut()
-    .then(() =>{})
-    .catch(error => console.log(error))
-
-  }
+      .then(() => navigate("/login"))
+      .catch((error) => console.error("Logout failed:", error));
+  };
 
   return (
-    <div className="container mx-auto py-6">
-      <h1 className="text-3xl font-bold text-center mb-4 italic">----My Dashboard----</h1>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Edit Biodata */}
-        <div className="bg-white shadow-md rounded-md p-6">
-          <h2 className="text-xl font-bold">Edit Biodata</h2>
-          <p>Update your personal biodata information.</p>
-          <Link
-            to="/dashboard/edit-biodata"
-            className="text-blue-500 hover:text-blue-700"
-          >
-            Edit Biodata
-          </Link>
-        </div>
-
-        {/* View Biodata */}
-        <div className="bg-white shadow-md rounded-md p-6">
-          <h2 className="text-xl font-bold">View Biodata</h2>
-          {biodata ? (
+    <div className="flex">
+      {/* Sidebar */}
+      <div className="w-1/4 bg-gray-800 text-white h-screen p-4">
+        <h2 className="text-2xl font-bold mb-6">
+          {isAdmin ? "Admin Dashboard" : "User Dashboard"}
+        </h2>
+        <nav className="space-y-4">
+          {isAdmin ? (
             <>
-              <p><strong>Name:</strong> {biodata.name}</p>
-              <p><strong>Type:</strong> {biodata.biodataType}</p>
-              <p><strong>Occupation:</strong> {biodata.occupation}</p>
-              <Link
-                to={`/viewbiodata`}
-                className="text-blue-500 hover:text-blue-700"
-              >
-                View Details
+              {/* Admin-specific links */}
+              <Link to="/dashboard" className="block hover:bg-gray-700 p-2 rounded">
+                Admin Dashboard
+              </Link>
+              <Link to="/dashboard/manage-users" className="block hover:bg-gray-700 p-2 rounded">
+                Manage Users
+              </Link>
+              <Link to="/dashboard/approved-premium" className="block hover:bg-gray-700 p-2 rounded">
+                Approved Premium
+              </Link>
+              <Link to="/dashboard/approved-requests" className="block hover:bg-gray-700 p-2 rounded">
+                Approved Contact Requests
               </Link>
             </>
           ) : (
-            <p>Loading your biodata...</p>
+            <>
+              {/* User-specific links */}
+              <Link to="/dashboard" className="block hover:bg-gray-700 p-2 rounded">
+                My Dashboard
+              </Link>
+              <Link to="/dashboard/edit-biodata" className="block hover:bg-gray-700 p-2 rounded">
+                Edit Biodata
+              </Link>
+              <Link to="/dashboard/view-biodata" className="block hover:bg-gray-700 p-2 rounded">
+                View Biodata
+              </Link>
+              <Link to="/dashboard/my-contact-requests" className="block hover:bg-gray-700 p-2 rounded">
+                My Contact Requests
+              </Link>
+              <Link to="/dashboard/favourites" className="block hover:bg-gray-700 p-2 rounded">
+                Favourites
+              </Link>
+            </>
           )}
-        </div>
-
-        {/* My Contact Request */}
-        <div className="bg-white shadow-md rounded-md p-6">
-          <h2 className="text-xl font-bold">My Contact Requests</h2>
-          <Link
-            to="/dashboard/my-contact-requests"
-            className="text-blue-500 hover:text-blue-700"
+          <button
+            onClick={handleLogout}
+            className="block w-full bg-red-600 hover:bg-red-700 p-2 rounded mt-4"
           >
-            View My Contact Requests
-          </Link>
-        </div>
-
-        {/* Favourites Biodata */}
-        <div className="bg-white shadow-md rounded-md p-6">
-          <h2 className="text-xl font-bold">Favourites Biodata</h2>
-          <Link
-            to="/dashboard/favourites"
-            className="text-blue-500 hover:text-blue-700"
-          >
-            View Favourites
-          </Link>
-        </div>
+            Logout
+          </button>
+        </nav>
       </div>
 
-      {/* Logout */}
-      <div className="mt-6 text-center">
-        <button
-          onClick={handleLogOut}
-          className="bg-red-500 text-white py-2 px-6 rounded shadow-md hover:bg-red-600"
-        >
-          Logout
-        </button>
+      {/* Content Area */}
+      <div className="w-3/4 p-6">
+        <Outlet />
       </div>
     </div>
   );
