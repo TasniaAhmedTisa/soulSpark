@@ -4,7 +4,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 const Dashboard = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [isAdmin, setIsAdmin] = useState(false); // Assuming role information is in `user`
+  const [isAdmin, setIsAdmin] = useState(false); 
 
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ const Dashboard = () => {
           {isAdmin ? (
             <>
               {/* Admin-specific links */}
-              <Link to="/dashboard" className="block hover:bg-gray-700 p-2 rounded">
+              <Link to="/admindashboard" className="block hover:bg-gray-700 p-2 rounded">
                 Admin Dashboard
               </Link>
               <Link to="/dashboard/manage-users" className="block hover:bg-gray-700 p-2 rounded">
@@ -47,9 +47,7 @@ const Dashboard = () => {
           ) : (
             <>
               {/* User-specific links */}
-              <Link to="/dashboard" className="block hover:bg-gray-700 p-2 rounded">
-                My Dashboard
-              </Link>
+             
               <Link to="/dashboard/edit-biodata" className="block hover:bg-gray-700 p-2 rounded">
                 Edit Biodata
               </Link>
@@ -61,6 +59,9 @@ const Dashboard = () => {
               </Link>
               <Link to="/dashboard/favourites" className="block hover:bg-gray-700 p-2 rounded">
                 Favourites
+              </Link>
+              <Link to="/dashboard/gotmarried" className="block hover:bg-gray-700 p-2 rounded">
+                Got Married
               </Link>
             </>
           )}

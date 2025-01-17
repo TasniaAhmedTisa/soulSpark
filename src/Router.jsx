@@ -17,6 +17,11 @@ import EditBio from "./pages/dashboard/EditBio";
 import FavBio from "./pages/dashboard/FavBio";
 import MyContactReq from "./pages/dashboard/MyContactReq";
 import ViewBio from "./pages/dashboard/ViewBio";
+import ManageUsers from "./pages/dashboard/ManageUsers";
+import ApprovedPre from "./pages/dashboard/ApprovedPre";
+import ApprovedContact from "./pages/dashboard/ApprovedContact";
+import Admin from "./pages/dashboard/Admin";
+import GotMarried from "./pages/dashboard/GotMarried";
   
   export const router = createBrowserRouter([
     {
@@ -49,11 +54,27 @@ import ViewBio from "./pages/dashboard/ViewBio";
           element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
           children:[
             {
-              path: '/dashboard/edit-biodata',
+              path:'admindashboard',
+              element:<Admin></Admin>
+            },
+            { 
+              path: "/dashboard/manage-users", 
+              element: <ManageUsers></ManageUsers>
+             },
+            { 
+              path: "/dashboard/approved-premium", 
+              element:  <ApprovedPre></ApprovedPre>
+            },
+            { 
+              path: "/dashboard/approved-requests",
+              element: <ApprovedContact></ApprovedContact>
+            }, 
+            {
+              path: 'edit-biodata',
               element:<EditBio></EditBio>
             },
             {
-              path:'/dashboard/view-biodata',
+              path:'view-biodata',
               element:<ViewBio></ViewBio>
             },
             {
@@ -63,6 +84,10 @@ import ViewBio from "./pages/dashboard/ViewBio";
             {
               path:'/dashboard/favourites',
               element:<FavBio></FavBio>
+            },
+            {
+              path:'/dashboard/gotmarried',
+              element:<GotMarried></GotMarried>
             },
             
           ]
