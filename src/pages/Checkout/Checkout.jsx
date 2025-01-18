@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -7,6 +7,7 @@ const Checkout = () => {
   const { id } = useParams(); // biodataId from the route
   const { user } = useContext(AuthContext); // Get the authenticated user's info
   const [paymentDetails, setPaymentDetails] = useState({ cardNumber: "" });
+  const navigate = useNavigate()
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -45,6 +46,7 @@ const Checkout = () => {
               no-repeat
             `
           });
+          navigate("/dashboard/my-contact-requests");
        } else {
         console.error(result.message);
         alert("Failed to submit the contact information request.");

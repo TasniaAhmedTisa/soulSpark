@@ -1,4 +1,3 @@
-import { FaGoogle } from "react-icons/fa";
 import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -54,17 +53,21 @@ const  Register = () => {
 })
  }
 
-   const handleGoogleSignIn = () => {
-       googleSignIn()
-         .then((user) => {
-           Swal.fire("Successfully signIn", "Google Sign-In Successful", "success");
-           navigate(from, { replace: true }); 
-         })
-         .catch((error) => {
-           console.error("Google Sign-In Error:", error);
-           Swal.fire("Error", "Google Sign-In Failed", "error");
-         });
-     };
+ const handleGoogleSignIn = () =>{
+  googleSignIn()
+  .then(result =>{
+      console.log(result.user);
+      const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName
+      }
+      axiosPublic.post('/users', userInfo)
+      .then(res =>{
+          console.log(res.data);
+          navigate(from, { replace: true });
+      })
+  })
+}
 
   return (
     <div className='w-11/12 mx-auto'>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import SimilarBiodatas from "./SimilarBiodatas ";
+import Swal from "sweetalert2";
 
 const Details = () => {
   const { id } = useParams();
@@ -39,8 +40,12 @@ const Details = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log("Added to favorites", data);
-        alert("Biodata added to favorites!");
-      })
+        Swal.fire({
+          title: "Success!",
+          text: "Biodata added to favorites!",
+          icon: "success",
+          confirmButtonText: "OK",
+        });      })
       .catch((err) => {
         console.error("Error adding to favorites", err);
         alert("Error adding to favorites. Please try again.");

@@ -8,7 +8,7 @@ const FavBio = () => {
 
   useEffect(() => {
     if (user && user.email) {
-      fetch(`http://localhost:5000/favourites?userEmail=${user.email}`) // Replace with actual user email
+      fetch(`http://localhost:5000/favourites?userEmail=${user.email}`) 
         .then((res) => res.json())
         .then((data) => setFavourites(data))
         .catch((err) => console.error("Error fetching favourites:", err));

@@ -5,31 +5,34 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from 'sweetalert2'
 import useAuth from "../hooks/useAuth";
-import { signInWithPopup } from "firebase/auth";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 
 
 function login() {
     const {googleSignIn, signIn} = useAuth()
     const navigate = useNavigate()
-
+    const axiosPublic = useAxiosPublic()
     const location = useLocation()
 
     const from = location.state?.from?.pathname || "/";
 
      // Handle Google Sign-In with Popup
-  const handleGoogleSignIn = () => {
-    googleSignIn()
-      .then((user) => {
-        Swal.fire("Successfully Login", "Google Sign-In Successful", "success");
-        navigate(from, { replace: true }); // Redirect user to the previous page or home
+     const handleGoogleSignIn = () =>{
+      googleSignIn()
+      .then(result =>{
+          console.log(result.user);
+          const userInfo = {
+              email: result.user?.email,
+              name: result.user?.displayName
+          }
+          axiosPublic.post('/users', userInfo)
+          .then(res =>{
+              console.log(res.data);
+              navigate(from, { replace: true });
+          })
       })
-      .catch((error) => {
-        console.error("Google Sign-In Error:", error);
-        Swal.fire("Error", "Google Sign-In Failed", "error");
-      });
-  };
-
+    }
     const handleLogin = event =>{
         event.preventDefault()
         const form = event.target

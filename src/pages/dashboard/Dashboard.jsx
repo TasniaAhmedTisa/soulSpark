@@ -31,7 +31,7 @@ const Dashboard = () => {
           {isAdmin ? (
             <>
               {/* Admin-specific links */}
-              <Link to="/admindashboard" className="block hover:bg-gray-700 p-2 rounded">
+              <Link to="admindashboard" className="block hover:bg-gray-700 p-2 rounded">
                 Admin Dashboard
               </Link>
               <Link to="/dashboard/manage-users" className="block hover:bg-gray-700 p-2 rounded">
