@@ -6,9 +6,8 @@ const Biodatas = () => {
   const [biodatas, setBiodatas] = useState([]);
   const [filteredBiodatas, setFilteredBiodatas] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const biodatasPerPage = 6;
+  const biodatasPerPage = 9;
 
-  // Fetch all biodatas on initial render
   useEffect(() => {
     fetch("http://localhost:5000/biodata")
       .then((res) => res.json())
@@ -18,7 +17,6 @@ const Biodatas = () => {
       });
   }, []);
 
-  // Handle filter updates
   const handleFilterUpdate = (filters) => {
     let filtered = [...biodatas];
 

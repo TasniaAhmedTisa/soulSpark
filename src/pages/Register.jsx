@@ -6,38 +6,54 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import useAuth from "../hooks/useAuth";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 
 const  Register = () => {
   const location = useLocation()
   const navigate = useNavigate()
-
+  const axiosPublic = useAxiosPublic()
 
   const from = location.state?.from?.pathname || "/";
 
-    const {register, handleSubmit, formState: {errors}} = useForm()
-    const {createUser, googleSignIn} = useAuth()
+    const {register, handleSubmit, reset, formState: {errors}} = useForm()
+    const {createUser, googleSignIn, updateUserProfile} = useAuth()
 
     const onSubmit = data => {
-        console.log(data)
         createUser(data.email, data.password)
         .then(result =>{
           const loggedUser = result.user
           console.log(loggedUser)
-          Swal.fire({
-                        title: 'User Registration Successful.',
-                        showClass: {
-                            popup: 'animate__animated animate__fadeInDown'
-                        },
-                        hideClass: {
-                            popup: 'animate__animated animate__fadeOutUp'
-                        }
-                    });
-                    navigate(from, { replace: true });
+          updateUserProfile(data.name, data.photoURL)
+          .then(() =>{
+            //create user entry in the database
+            const userInfo = {
+              name: data.name,
+              email: data.email
+            }
+            axiosPublic.post('/users', userInfo )
 
-        })
-      }
-       // Google Sign In handler
+            .then(res => {
+              if (res.data.insertedId) {
+                  console.log('user added to the database')
+                  reset();
+                  Swal.fire({
+                      position: 'top-end',
+                      icon: 'success',
+                      title: 'User created successfully.',
+                      showConfirmButton: false,
+                      timer: 1500
+                  });
+                  navigate(from, { replace: true });
+              }
+          })
+
+
+  })
+  .catch(error => console.log(error))
+})
+ }
+
    const handleGoogleSignIn = () => {
        googleSignIn()
          .then((user) => {
