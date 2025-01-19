@@ -45,7 +45,7 @@ const ApprovedContact = () => {
   return (
     <div className="container mx-auto py-6">
       <h1 className="text-3xl font-bold text-center mb-6">
-        Approved Contact Requests
+        Approve Contact Requests
       </h1>
       <div className="overflow-x-auto">
         <table className="table-auto w-full border-collapse border border-gray-300">

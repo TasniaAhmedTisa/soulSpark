@@ -5,7 +5,7 @@ const ViewBio = () => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/biodata/1") // Replace with the actual user's biodata ID
+    fetch("http://localhost:5000/biodata/1") 
       .then((res) => res.json())
       .then((data) => setBiodata(data))
       .catch((err) => console.error("Error fetching biodata:", err));
@@ -17,11 +17,17 @@ const ViewBio = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ biodataId: biodata.biodataId }),
+      body: JSON.stringify({ biodataId: biodata.biodataId,
+         name: biodata.name,
+         requestedAt: new Date().toISOString() }),
     })
       .then((res) => res.json())
-      .then(() => {
-        alert("Premium request sent successfully!");
+      .then((data) => {
+        if (data.success) {
+          alert("Premium request saved successfully!");
+        } else {
+          alert("Failed to save premium request.");
+        }
         setShowModal(false);
       })
       .catch((err) => console.error("Error submitting premium request:", err));
