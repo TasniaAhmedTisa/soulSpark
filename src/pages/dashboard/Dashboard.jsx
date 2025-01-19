@@ -1,17 +1,30 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+//import useAdmin from "../../hooks/useAdmin";
+import axios from "axios";
 
 const Dashboard = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isAdmin, setIsAdmin] = useState(false); 
-
+//  const [isAdmin] = useAdmin()
+//  console.log(isAdmin)
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user && user.role === "admin") {
-      setIsAdmin(true);
-    }
+    const checkAdminStatus = async () => {
+      if (user && user.email) {
+        try {
+          const response = await axios.get(
+            `http://localhost:5000/users/admin/${user.email}`
+          );
+          setIsAdmin(response.data.admin); // Backend should return `admin: true/false`
+        } catch (error) {
+          console.error("Failed to check admin status:", error);
+        }
+      }
+    };
+    checkAdminStatus();
   }, [user]);
 
   const handleLogout = () => {

@@ -1,12 +1,81 @@
-import React from 'react';
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const ApprovedPre = () => {
-    return (
-        <div>
-                  <h1 className="text-3xl font-bold text-center mb-4">Approved Premium</h1>
+  const axiosSecure = useAxiosSecure();
 
-        </div>
-    );
+  // Fetch premium approval requests
+  const { data: premiumRequests = [], refetch } = useQuery({
+    queryKey: ["premiumRequests"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/premium-requests");
+      return res.data;
+    },
+  });
+
+  // Handle premium approval
+  const handleMakePremium = (user) => {
+    axiosSecure
+      .patch(`/users/make-premium/${user._id}`)
+      .then((res) => {
+        if (res.data.modifiedCount > 0) {
+          refetch();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${user.name} has been made a Premium User!`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      })
+      .catch((err) => {
+        console.error("Error approving premium request:", err);
+        Swal.fire({
+          icon: "error",
+          title: "Failed to make Premium",
+          text: "Something went wrong.",
+        });
+      });
+  };
+
+  return (
+    <div className="container mx-auto py-6">
+      <h1 className="text-3xl font-bold text-center mb-6">
+        Approved Premium Requests
+      </h1>
+      <div className="overflow-x-auto">
+        <table className="table-auto w-full border-collapse border border-gray-300">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="border border-gray-300 px-4 py-2">Name</th>
+              <th className="border border-gray-300 px-4 py-2">Email</th>
+              <th className="border border-gray-300 px-4 py-2">Biodata ID</th>
+              <th className="border border-gray-300 px-4 py-2">Make Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            {premiumRequests.map((user) => (
+              <tr key={user._id} className="text-center">
+                <td className="border border-gray-300 px-4 py-2">{user.name}</td>
+                <td className="border border-gray-300 px-4 py-2">{user.email}</td>
+                <td className="border border-gray-300 px-4 py-2">{user.biodataId || "N/A"}</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  <button
+                    onClick={() => handleMakePremium(user)}
+                    className="bg-green-500 text-white py-1 px-3 rounded shadow hover:bg-green-600"
+                  >
+                    Make Premium
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 
 export default ApprovedPre;

@@ -43,7 +43,7 @@ const MemberList = () => {
 
     return (
         <section className="my-8 w-11/12 mx-auto mb-5">
-                            <h1 className="text-2xl font-bold text-center italic">----Premium Members----</h1>
+                            <h2 className=" font-bold text-center italic">----Premium Members----</h2>
 
             <div className="flex justify-between items-center mb-5">
                 <button

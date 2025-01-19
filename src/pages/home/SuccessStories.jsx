@@ -16,7 +16,7 @@ const SuccessStories = () => {
   return (
     <section className="py-10 bg-gray-50 w-11/12 mx-auto my-5">
       <h2 className="text-3xl font-bold text-center mb-10 italic">---- Success Stories ----</h2>
-      <div className="space-y-12">
+      <div className="space-y-12 w-10/12 mx-auto">
         {stories.map((story, index) => (
           <div key={index} className="bg-white shadow-md p-6 rounded-lg">
             <img

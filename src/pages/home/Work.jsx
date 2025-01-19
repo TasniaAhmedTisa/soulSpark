@@ -6,7 +6,7 @@ const HowItWorks = () => {
   return (
     <section className="py-5 bg-light text-center w-11/12 mx-auto mb-5">
       <Container>
-        <h2 className="mb-4 font-bold text-2xl italic">----How It Works----</h2>
+        <h2 className="mb-4 font-bold italic">----How It Works----</h2>
         <p className="mb-5 text-gray-600">
           Follow these three simple steps to find your perfect match.
         </p>

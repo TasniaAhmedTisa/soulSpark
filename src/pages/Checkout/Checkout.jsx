@@ -19,6 +19,7 @@ const Checkout = () => {
 
     const requestPayload = {
       biodataId: id,
+      name: user.displayName,
       userEmail: user.email,
       cardNumber: paymentDetails.cardNumber,
       paymentAmount: 5,
@@ -66,6 +67,15 @@ const Checkout = () => {
           <input
             type="text"
             value={id}
+            readOnly
+            className="w-full p-2 border rounded bg-gray-100"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block font-semibold">Name</label>
+          <input
+            type="text"
+            value={user.displayName}
             readOnly
             className="w-full p-2 border rounded bg-gray-100"
           />
