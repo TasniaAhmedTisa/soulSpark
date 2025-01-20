@@ -17,7 +17,7 @@ const ManageUsers = () => {
 
   // Fetch all users
 //   useEffect(() => {
-//     fetch("http://localhost:5000/users")
+//     fetch("https://assignment-12-server-five-opal.vercel.app/users")
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setUsers(data);
@@ -48,7 +48,7 @@ const ManageUsers = () => {
       
 
   const handleMakePremium = (userId) => {
-    fetch(`http://localhost:5000/users/make-premium/${userId}`, {
+    fetch(`https://assignment-12-server-five-opal.vercel.app/users/make-premium/${userId}`, {
       method: "PATCH",
     })
       .then((res) => res.json())

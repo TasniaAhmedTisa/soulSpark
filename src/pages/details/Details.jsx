@@ -13,7 +13,7 @@ const Details = () => {
 
   // Fetch biodata details
   useEffect(() => {
-    fetch(`http://localhost:5000/biodata/${id}`)
+    fetch(`https://assignment-12-server-five-opal.vercel.app/biodata/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setBiodata(data)
@@ -30,7 +30,7 @@ const Details = () => {
       userEmail: user.email, // Assuming the user is logged in and you have access to the user's email
     };
   
-    fetch("http://localhost:5000/favourites", {
+    fetch("https://assignment-12-server-five-opal.vercel.app/favourites", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -5,7 +5,7 @@ const SuccessStories = () => {
 
   useEffect(() => {
     const fetchStories = async () => {
-      const response = await fetch('http://localhost:5000/success-stories');
+      const response = await fetch('https://assignment-12-server-five-opal.vercel.app/success-stories');
       const data = await response.json();
       setStories(data);
     };

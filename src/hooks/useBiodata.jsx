@@ -5,7 +5,7 @@ const useBiodata = () =>{
     const [loading, setLoading] = useState(true)
     
         useEffect(() => {
-            fetch('http://localhost:5000/biodata')
+            fetch('https://assignment-12-server-five-opal.vercel.app/biodata')
                 .then(res => res.json())
                 .then(data => {
                     setMembers(data)

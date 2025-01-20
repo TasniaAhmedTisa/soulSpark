@@ -5,14 +5,14 @@ const ViewBio = () => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/biodata/1") 
+    fetch("https://assignment-12-server-five-opal.vercel.app/biodata/2") 
       .then((res) => res.json())
       .then((data) => setBiodata(data))
       .catch((err) => console.error("Error fetching biodata:", err));
   }, []);
 
   const handlePremiumRequest = () => {
-    fetch("http://localhost:5000/premium-requests", {
+    fetch("https://assignment-12-server-five-opal.vercel.app/premium-requests", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

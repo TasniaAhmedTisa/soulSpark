@@ -16,7 +16,7 @@ function NavScrollExample() {
 
         }
   return (
-    <Navbar expand="lg" className="bg-body-tertiary m-2 p-3">
+    <Navbar expand="lg" className=" sticky-top p-3 px-5 shadow-md bg-opacity-20 backdrop-blur-md mb-3">
       <Container fluid>
         <Navbar.Brand as={Link} to="/" className='font-semibold text-2xl'>SoulSpark</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

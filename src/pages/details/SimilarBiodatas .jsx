@@ -5,7 +5,7 @@ const SimilarBiodatas = ({ biodataType }) => {
   const [similarBiodatas, setSimilarBiodatas] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/biodata?biodataType=${biodataType}`)
+    fetch(`https://assignment-12-server-five-opal.vercel.app/biodata?biodataType=${biodataType}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)

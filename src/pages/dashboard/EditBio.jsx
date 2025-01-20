@@ -27,7 +27,7 @@ const EditBio = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:5000/biodata/${id}`)
+    fetch(`https://assignment-12-server-five-opal.vercel.app/biodata/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setBiodata(data); 
@@ -42,7 +42,7 @@ const EditBio = () => {
 
  const handleSubmit = (e) => {
   e.preventDefault();
-  fetch(`http://localhost:5000/biodata/${id}`, {
+  fetch(`https://assignment-12-server-five-opal.vercel.app/biodata/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

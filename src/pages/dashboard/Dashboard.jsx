@@ -16,7 +16,7 @@ const Dashboard = () => {
       if (user && user.email) {
         try {
           const response = await axios.get(
-            `http://localhost:5000/users/admin/${user.email}`
+            `https://assignment-12-server-five-opal.vercel.app/users/admin/${user.email}`
           );
           setIsAdmin(response.data.admin); // Backend should return `admin: true/false`
         } catch (error) {

@@ -26,7 +26,7 @@ const Checkout = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/contact-requests", {
+      const response = await fetch("https://assignment-12-server-five-opal.vercel.app/contact-requests", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestPayload),

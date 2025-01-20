@@ -16,7 +16,7 @@ const Admin = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/admin-stats"); // Adjust URL as necessary
+        const response = await axios.get("https://assignment-12-server-five-opal.vercel.app/admin-stats"); // Adjust URL as necessary
         setStats(response.data);
         setLoading(false);
       } catch (err) {

@@ -12,7 +12,7 @@ const MyContactReq = () => {
       return;
     }
 
-    fetch(`http://localhost:5000/contact-requests?userEmail=${user.email}`)
+    fetch(`https://assignment-12-server-five-opal.vercel.app/contact-requests?userEmail=${user.email}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Error fetching requests: ${res.statusText}`);
@@ -27,7 +27,7 @@ const MyContactReq = () => {
   }, [user]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/contact-requests/${id}`, {
+    fetch(`https://assignment-12-server-five-opal.vercel.app/contact-requests/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
