@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const EditBio = () => {
   const navigate = useNavigate();
@@ -56,8 +57,14 @@ const EditBio = () => {
       return res.json();
     })
     .then(() => {
-      alert("Biodata updated successfully!");
-      navigate("/dashboard");
+    Swal.fire({
+                  title: "Success",
+                  text: "Biodata Updated Successfully!",
+                  icon: "success",
+                  confirmButtonText: "OK",
+                });    
+                
+                navigate("/dashboard");
     })
     .catch((err) => {
       console.error("Error updating biodata:", err);

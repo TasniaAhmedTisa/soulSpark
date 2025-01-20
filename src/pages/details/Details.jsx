@@ -39,7 +39,7 @@ const Details = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Added to favorites", data);
+        //console.log("Added to favorites", data);
         Swal.fire({
           title: "Success!",
           text: "Biodata added to favorites!",
@@ -72,7 +72,7 @@ const Details = () => {
           <p><strong>Type:</strong> {biodata.biodataType}</p>
           <p><strong>Division:</strong> {biodata.permanentDivision}</p>
           <p><strong>Occupation:</strong> {biodata.occupation}</p>
-          {isPremiumMember ? (
+          {user.category === 'Premium' ? (
             <>
               <p><strong>Email:</strong> {biodata.email}</p>
               <p><strong>Phone:</strong> {biodata.phone}</p>

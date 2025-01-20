@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const FavBio = () => {
   const { user } = useContext(AuthContext);
@@ -22,8 +23,13 @@ const FavBio = () => {
       .then((res) => res.json())
       .then(() => {
         setFavourites((prev) => prev.filter((fav) => fav._id !== id));
-        alert("Favourite deleted successfully!");
-      });
+        Swal.fire({
+                  title: "Successfully Delete!",
+                  text: "Deleted!",
+                  icon: "success",
+                  confirmButtonText: "OK",
+                });   
+             });
   };
 
   if (!user || !user.email) {

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 const ViewBio = () => {
   const [biodata, setBiodata] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    fetch("https://assignment-12-server-five-opal.vercel.app/biodata/2") 
+    fetch("https://assignment-12-server-five-opal.vercel.app/biodata/5") 
       .then((res) => res.json())
       .then((data) => setBiodata(data))
       .catch((err) => console.error("Error fetching biodata:", err));
@@ -24,7 +25,12 @@ const ViewBio = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          alert("Premium request saved successfully!");
+          Swal.fire({
+                            title: "Successfully Save!",
+                            text: "Premium request saved successfully!",
+                            icon: "success",
+                            confirmButtonText: "OK",
+                          });
         } else {
           alert("Failed to save premium request.");
         }

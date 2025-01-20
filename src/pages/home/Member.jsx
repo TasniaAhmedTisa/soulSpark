@@ -37,21 +37,24 @@ const MemberList = () => {
         setFilteredMembers(sorted);
     }, [members, sortOrder]);
 
-    const toggleSortOrder = () => {
-        setSortOrder((prevOrder) => (prevOrder === "ascending" ? "descending" : "ascending"));
+    const handleSortChange = (e) => {
+        setSortOrder(e.target.value);
     };
 
     return (
         <section className="my-8 w-11/12 mx-auto mb-5">
-                            <h2 className=" font-bold text-center italic">----Premium Members----</h2>
+              <h2 className=" font-bold text-center italic">----Premium Members----</h2>
 
             <div className="flex justify-between items-center mb-5">
-                <button
-                    onClick={toggleSortOrder}
-                    className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition-all"
+            <select
+                    onChange={handleSortChange}
+                    value={sortOrder}
+                    className="bg-gray-100 border border-gray-300 rounded px-4 py-2 "
                 >
-                    Sort: {sortOrder === "ascending" ? "Descending" : "Ascending"}
-                </button>
+                    
+                    <option value="ascending">Sort by Age: Ascending</option>
+                    <option value="descending">Sort by Age: Descending</option>
+                </select>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredMembers.map((member) => (

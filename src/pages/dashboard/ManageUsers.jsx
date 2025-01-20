@@ -1,9 +1,10 @@
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 const ManageUsers = () => {
     const axiosSecure = useAxiosSecure()
+    const queryClient = useQueryClient();
+
   //const [users, setUsers] = useState([]);
  // const [loading, setLoading] = useState(true);
 
@@ -47,27 +48,24 @@ const ManageUsers = () => {
 }
       
 
-  const handleMakePremium = (userId) => {
-    fetch(`https://assignment-12-server-five-opal.vercel.app/users/make-premium/${userId}`, {
-      method: "PATCH",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          alert("User has been made premium successfully!");
-          setUsers((prevUsers) =>
-            prevUsers.map((user) =>
-              user.id === userId ? { ...user, isPremium: true } : user
-            )
-          );
-        }
-      })
-      .catch((err) => console.error("Error making user premium:", err));
-  };
+const handleMakePremium = (userId) => {
+  const updatedUsers = users.map((user) =>
+    user._id === userId ? { ...user, isPremium: true } : user
+  );
 
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
+  queryClient.setQueryData(["users"], updatedUsers);
+
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "User is now Premium!",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+};
+
+
+
 
   return (
     <div className="container mx-auto py-6">
@@ -104,7 +102,7 @@ const ManageUsers = () => {
                     <span className="text-green-600 font-bold">Premium</span>
                   ) : (
                     <button
-                      onClick={() => handleMakePremium(user.id)}
+                      onClick={() => handleMakePremium(user._id)}
                       className="bg-green-500 text-white py-1 px-3 rounded shadow hover:bg-green-600"
                     >
                       Make Premium

@@ -22,6 +22,7 @@ import ApprovedPre from "./pages/dashboard/ApprovedPre";
 import ApprovedContact from "./pages/dashboard/ApprovedContact";
 import Admin from "./pages/dashboard/Admin";
 import GotMarried from "./pages/dashboard/GotMarried";
+import Success from "./pages/dashboard/Success";
   
   export const router = createBrowserRouter([
     {
@@ -60,6 +61,10 @@ import GotMarried from "./pages/dashboard/GotMarried";
             { 
               path: "/dashboard/manage-users", 
               element: <ManageUsers></ManageUsers>
+             },
+             { 
+              path: "/dashboard/success-stories", 
+              element: <Success></Success>
              },
             { 
               path: "/dashboard/approved-premium", 

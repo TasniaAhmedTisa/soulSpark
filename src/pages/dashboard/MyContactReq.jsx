@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyContactReq = () => {
   const { user } = useContext(AuthContext);
@@ -33,7 +34,12 @@ const MyContactReq = () => {
       .then((res) => res.json())
       .then(() => {
         setRequests((prev) => prev.filter((req) => req._id !== id));
-        alert("Request deleted successfully!");
+        Swal.fire({
+                  title: "Successfully Delete!",
+                  text: "Contact Request Deleted!",
+                  icon: "success",
+                  confirmButtonText: "OK",
+                });   
       })
       .catch((err) => console.error("Error deleting request:", err));
   };

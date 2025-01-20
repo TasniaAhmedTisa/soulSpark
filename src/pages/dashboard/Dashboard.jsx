@@ -56,6 +56,9 @@ const Dashboard = () => {
               <Link to="/dashboard/approved-requests" className="block hover:bg-gray-700 p-2 rounded">
                 Approved Contact Requests
               </Link>
+              <Link to="/dashboard/success-stories" className="block hover:bg-gray-700 p-2 rounded">
+                Success Stories
+              </Link>
             </>
           ) : (
             <>
