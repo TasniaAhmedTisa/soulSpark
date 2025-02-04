@@ -31,9 +31,6 @@ Secure Payment Integration: Ensure seamless transactions for premium services or
 
 
 
-Front-end Live Site Link: https://soulspark-32809.web.app/ 
-
-
 
 Dynamic Role-Based Access: Switch between admin and user functionalities with tailored permissions.
 
@@ -42,3 +39,10 @@ Real-Time Updates: Stay updated with the latest approvals, requests, and biodata
 
 
 Modern Interface: Built with React and Vite for fast, responsive, and intuitive user experiences.
+
+
+
+
+Front-end Live Site Link: https://soulspark-32809.web.app/
+
+
