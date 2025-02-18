@@ -23,6 +23,7 @@ import ApprovedContact from "./pages/dashboard/ApprovedContact";
 import Admin from "./pages/dashboard/Admin";
 import GotMarried from "./pages/dashboard/GotMarried";
 import Success from "./pages/dashboard/Success";
+import ProfilePage from "./pages/dashboard/Profile";
   
   export const router = createBrowserRouter([
     {
@@ -54,6 +55,12 @@ import Success from "./pages/dashboard/Success";
           path: '/dashboard',
           element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
           children:[
+            {
+              index:true,
+              path:'profile',
+              element: <ProfilePage></ProfilePage>
+            },
+            
             {
               path:'admindashboard',
               element:<Admin></Admin>

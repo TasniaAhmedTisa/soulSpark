@@ -44,6 +44,9 @@ const Dashboard = () => {
           {isAdmin ? (
             <>
               {/* Admin-specific links */}
+              <Link to="profile" className="block hover:bg-gray-700 p-2 rounded">
+                My profile
+              </Link>
               <Link to="admindashboard" className="block hover:bg-gray-700 p-2 rounded">
                 Overview
               </Link>
@@ -59,11 +62,17 @@ const Dashboard = () => {
               <Link to="/dashboard/success-stories" className="block hover:bg-gray-700 p-2 rounded">
                 Success Stories
               </Link>
+
             </>
           ) : (
             <>
               {/* User-specific links */}
-             
+              <Link to="profile" className="block hover:bg-gray-700 p-2 rounded">
+                My profile
+              </Link>
+              <Link to="admindashboard" className="block hover:bg-gray-700 p-2 rounded">
+                Overview
+              </Link>
               <Link to="/dashboard/edit-biodata" className="block hover:bg-gray-700 p-2 rounded">
                 Edit Biodata
               </Link>
