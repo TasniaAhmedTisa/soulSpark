@@ -72,7 +72,7 @@ const Biodatas = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-900 via-blue-200 to-green-200 mb-5">
+    <div className="bg-gradient-to-r from-blue-900 via-blue-200 to-green-200 mb-3">
       <h1 className="text-center my-3 pt-5 italic animate__animated animate__backInLeft">----All Biodatas----</h1>
       <div className="flex gap-4 p-6">
         {/* Sidebar for Filters */}

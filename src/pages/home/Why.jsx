@@ -4,7 +4,7 @@ const WhyChooseUs = () => {
   return (
     <section className="relative bg-gradient-to-r from-gray-800 to-gray-900 text-white py-10 px-6">
       <div className="text-center">
-        <h2 className="text-4xl font-bold text-white my-4">Why Choose Us</h2>
+        <h2 className="font-bold text-white italic">----Why Choose Us----</h2>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto">
           Most Trusted and Premium Matrimony Service in the World.
         </p>

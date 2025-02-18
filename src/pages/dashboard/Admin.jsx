@@ -67,9 +67,7 @@ const Admin = () => {
         <li>
           <strong>Premium Biodata Count:</strong> {stats.premiumBiodataCount}
         </li>
-        <li>
-          <strong>Total Revenue ($):</strong> {stats.totalRevenue}
-        </li>
+        
       </ul>
       </div>
 

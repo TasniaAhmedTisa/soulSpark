@@ -15,7 +15,8 @@ export default function NewsletterSubscription() {
   };
 
   return (
-    <div className="relative -mb-16 bg-gradient-to-r from-green-100 to-blue-900 text-white py-12 px-6 text-center rounded-2xl shadow-lg max-w-md sm:max-w-sm md:max-w-3xl lg:max-w-6xl mx-auto mt-12">
+    <div className="relative -mb-16 bg-gradient-to-r from-green-200 to-blue-900 text-white py-10 px-8 text-center rounded-2xl shadow-lg max-w-md sm:max-w-sm md:max-w-3xl lg:max-w-6xl mx-auto mt-12">
+      <div className="border border-blue-950 shadow-2xl py-4 px-4 rounded-2xl ">
       <h2 className="text-3xl font-bold mb-4 text-black">Stay Updated with SoulSpark!</h2>
       <p className="text-lg mb-6 text-gray-800">Get dating tips, success stories, and exclusive offers.</p>
       <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -35,6 +36,7 @@ export default function NewsletterSubscription() {
         </button>
       </form>
       {message && <p className="mt-4 text-sm text-gray-200">{message}</p>}
+      </div>
     </div>
   );
 }

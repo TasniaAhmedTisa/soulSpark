@@ -11,7 +11,7 @@ import img3 from '../assets/Home/img2.jpg'
 
 const Banner = () => {
     return (
-        <div className='w-full'>
+        <div className='w-full -mt-8'>
             <Carousel >
                 <div>
                     <img src={img1}  />
