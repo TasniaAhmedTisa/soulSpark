@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import 'animate.css';
 
 const FavBio = () => {
   const { user } = useContext(AuthContext);
@@ -38,7 +39,7 @@ const FavBio = () => {
 
   return (
     <div className="container mx-auto py-6">
-      <h1 className="text-3xl font-bold text-center mb-4">My Favourites Biodata</h1>
+      <h1 className="animate__animated animate__fadeInDown text-3xl font-bold text-center mb-4">My Favourites Biodata</h1>
       {favourites.length === 0 ? (
         <p className="text-center text-gray-500">You have no favorite biodatas.</p>
       ) : (

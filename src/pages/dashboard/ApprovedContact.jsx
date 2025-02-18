@@ -1,6 +1,7 @@
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import 'animate.css';
 
 const ApprovedContact = () => {
   const axiosSecure = useAxiosSecure();
@@ -44,7 +45,7 @@ const ApprovedContact = () => {
 
   return (
     <div className="container mx-auto py-6">
-      <h1 className="text-3xl font-bold text-center mb-6">
+      <h1 className="animate__animated animate__fadeInDown text-3xl font-bold text-center mb-6">
         Approve Contact Requests
       </h1>
       <div className="overflow-x-auto">

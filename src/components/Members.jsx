@@ -5,7 +5,7 @@ const Members = ({ member }) => {
     const { biodataId, biodataType, profileImage, permanentDivision, occupation, age } = member;
 
     return (
-        <div className="bg-gradient-to-r from-white to-gray-100 shadow-xl shadow-black rounded-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 p-5">
+        <div className="bg-gradient-to-r from-white to-green-100 shadow-xl shadow-black rounded-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105 p-5">
             <div className="flex flex-col items-center">
                 <img
                     className="w-24 h-24 rounded-full border-4 border-blue-500 mb-4"

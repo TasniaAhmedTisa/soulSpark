@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Filterbar from "../components/FilterBar";
 import BiodataList from "../components/BiodataList";
+import 'animate.css';
 
 const Biodatas = () => {
   const [biodatas, setBiodatas] = useState([]);
@@ -71,9 +72,9 @@ const Biodatas = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-center my-4 italic">----All Biodatas----</h1>
-      <div className="flex gap-6 p-6">
+    <div className="bg-gradient-to-r from-blue-900 via-blue-200 to-green-200 mb-5">
+      <h1 className="text-center my-3 pt-5 italic animate__animated animate__backInLeft">----All Biodatas----</h1>
+      <div className="flex gap-4 p-6">
         {/* Sidebar for Filters */}
         <div className="w-1/4">
           <Filterbar onFilterUpdate={handleFilterUpdate} />
@@ -88,7 +89,7 @@ const Biodatas = () => {
             <button
               onClick={handlePreviousPage}
               disabled={currentPage === 1}
-              className="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded"
+              className="px-4 py-2 bg-gray-100 hover:bg-gray-400 rounded"
             >
               Previous
             </button>
@@ -96,7 +97,7 @@ const Biodatas = () => {
             <button
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
-              className="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded"
+              className="px-4 py-2 bg-gray-100 hover:bg-gray-400 rounded"
             >
               Next
             </button>

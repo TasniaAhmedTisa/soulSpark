@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import 'animate.css';
 
 const GotMarried = () => {
   const [selfBiodataId, setSelfBiodataId] = useState('');
@@ -39,7 +40,7 @@ const GotMarried = () => {
 
   return (
     <div className="w-11/12 mx-auto py-10">
-      <h2 className="text-2xl font-bold text-center mb-8">Got Married? Share Your Story!</h2>
+      <h2 className="animate__animated animate__fadeInDown text-2xl font-bold text-center mb-8">Got Married? Share Your Story!</h2>
       <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
         <div className="mb-4">
           <label className="block mb-2">Self Biodata ID</label>

@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { AuthContext } from '../../provider/AuthProvider';
+import 'animate.css';
+
 
 function NavScrollExample() {
         
@@ -16,13 +18,13 @@ function NavScrollExample() {
 
         }
   return (
-    <Navbar expand="lg" className=" sticky-top p-3 px-5 shadow-md bg-opacity-20 backdrop-blur-md mb-3">
+    <Navbar expand="lg" className=" sticky-top p-3 px-4 shadow-md bg-opacity-20 backdrop-blur-md mb-3">
       <Container fluid>
-        <Navbar.Brand as={Link} to="/" className='font-semibold text-2xl'>SoulSpark</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" className='font-extrabold text-2xl md:text-3xl lg:text-4xl  animate__animated animate__backInLeft'> SoulSpark</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="mx-auto my-2 my-lg-0 font-bold"
+            className="mx-auto my-2 my-lg-0 font-bold text-lg"
             style={{ maxHeight: '100px' }}
             navbarScroll
           >

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
+import 'animate.css';
 
 const ViewBio = () => {
   const [biodata, setBiodata] = useState(null);
@@ -43,7 +44,7 @@ const ViewBio = () => {
 
   return (
     <div className="container mx-auto py-6">
-      <h1 className="text-3xl font-bold text-center mb-4">View Biodata</h1>
+      <h1 className="animate__animated animate__fadeInDown text-3xl font-bold text-center mb-4">View Biodata</h1>
       <div className="bg-white shadow-md rounded-md p-6 space-y-4">
         <img
           src={biodata.profileImage}

@@ -42,23 +42,23 @@ const MemberList = () => {
     };
 
     return (
-        <section className="my-8 w-11/12 mx-auto mb-5">
-              <h2 className=" font-bold text-center italic">----Premium Members----</h2>
+        <section className="my-8 mb-5 mx-3">
+              <h2 className="animate__animated animate__fadeInDown font-bold text-center italic">----Premium Members----</h2>
 
-            <div className="flex justify-between items-center mb-5">
+            <div className="flex justify-between items-center mt-4 mb-2 px-5">
             <select
                     onChange={handleSortChange}
                     value={sortOrder}
-                    className="bg-gray-100 border border-gray-300 rounded px-4 py-2 "
+                    className=" rounded px-4 py-2 border-2 "
                 >
                     
                     <option value="ascending">Sort by Age: Ascending</option>
                     <option value="descending">Sort by Age: Descending</option>
                 </select>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {filteredMembers.map((member) => (
-                    <div key={member.biodataId}>                 
+                    <div key={member.biodataId} className="mx-5 my-3">                 
                     <Members key={member.biodataId} member={member} />
     
                   </div>

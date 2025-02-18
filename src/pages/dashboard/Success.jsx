@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import 'animate.css';
 
 const Success = () => {
   const [stories, setStories] = useState([]);
@@ -37,7 +38,7 @@ const Success = () => {
 
   return (
     <div className="container mx-auto py-6">
-      <h1 className="text-3xl font-bold text-center mb-4">Success Stories</h1>
+      <h1 className="animate__animated animate__fadeInDown text-3xl font-bold text-center mb-4">Success Stories</h1>
 
       {/* Table */}
       <table className="min-w-full bg-white border-collapse border border-gray-300">

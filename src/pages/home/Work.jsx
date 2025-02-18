@@ -4,7 +4,7 @@ import { FaUserPlus, FaSearch, FaHandshake } from 'react-icons/fa';
 
 const HowItWorks = () => {
   return (
-    <section className="py-5 bg-light text-center w-11/12 mx-auto mb-5">
+    <section className="py-5 bg-gradient-to-r from-green-100 to-blue-900 text-center mb-5">
       <Container>
         <h2 className="mb-4 font-bold italic">----How It Works----</h2>
         <p className="mb-5 text-gray-600">

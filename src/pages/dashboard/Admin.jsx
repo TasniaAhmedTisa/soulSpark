@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { PieChart, Pie, Cell, Tooltip, Legend,ResponsiveContainer} from "recharts";
+import 'animate.css';
 
 const Admin = () => {
   const [stats, setStats] = useState({
@@ -50,6 +51,7 @@ const Admin = () => {
 
   return (
     <div className="">
+      <h1 className="animate__animated animate__fadeInDown">Welcome to Dashboard!!</h1>
       <div className="mt-5 ml-10">
       <h1> Statistics</h1>
       <ul className="text-pretty">
