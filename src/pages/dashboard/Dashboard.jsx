@@ -37,7 +37,7 @@ const Dashboard = () => {
     <div className="flex">
       {/* Sidebar */}
       <div className="w-1/4 bg-gray-800 text-white h-screen p-4">
-        <h2 className="text-2xl font-bold mb-6">
+        <h2 className="text-lg lg:text-2xl font-bold mb-6">
           {isAdmin ? "Admin Dashboard" : "User Dashboard"}
         </h2>
         <nav className="space-y-4">
