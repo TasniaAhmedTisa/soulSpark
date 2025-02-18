@@ -2,11 +2,11 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-gradient-to-r from-blue-900 to-black text-white py-4">
+        <footer className="bg-gradient-to-r from-blue-900 to-black text-white pt-5 pb-5">
             <div className="container">
                 <div className="row">
                     {/* About Us Section */}
-                    <div className="col-md-4 mb-3">
+                    <div className="col-md-4 mb-3 mt-5">
                         <h5>About Us</h5>
                         <p>
                             Welcome to our Matrimony platform! We connect individuals with their ideal life partners in a secure and intuitive environment.
@@ -14,7 +14,7 @@ const Footer = () => {
                     </div>
 
                     {/* Quick Links Section */}
-                    <div className="col-md-4 mb-3">
+                    <div className="col-md-4 mb-3 mt-5">
                         <h5>Quick Links</h5>
                         <ul className="list-unstyled">
                             <li><a href="/" className="text-white text-decoration-none">Home</a></li>
@@ -25,7 +25,7 @@ const Footer = () => {
                     </div>
 
                     {/* Contact Us Section */}
-                    <div className="col-md-4 mb-3">
+                    <div className="col-md-4 mb-3 mt-5">
                         <h5>Contact Us</h5>
                         <p>Email: support@matrimonyplatform.com</p>
                         <p>Phone: +1 (123) 456-7890</p>

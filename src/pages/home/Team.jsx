@@ -5,8 +5,8 @@ const Team = () => {
         <div>
                 <section className="py-10 bg-gradient-to-b from-blue-900 to-green-100 text-white my-5">
                 <h2 className="animate__animated animate__fadeInDown font-bold text-center italic">----Meet Our Team----</h2>
-                <div className='flex justify-between px-4 gap-4 py-4'>
-                <div className="card bg-base-100 w-96 shadow-xl">
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-8 py-6 justify-items-center'>
+                <div className="card bg-base-100 w-80 shadow-xl">
   <figure>
     <img
       src="https://i.ibb.co.com/ymqJk61Y/p1.jpg"
@@ -18,7 +18,7 @@ const Team = () => {
     
   </div>
 </div>
-<div className="card bg-base-100 w-96 shadow-xl">
+<div className="card bg-base-100 w-80 shadow-xl">
   <figure>
     <img
       src="https://i.ibb.co.com/JFWTVmxN/female.jpg"
@@ -30,7 +30,7 @@ const Team = () => {
     
   </div>
 </div>
-<div className="card bg-base-100 w-96 shadow-xl">
+<div className="card bg-base-100 w-80 shadow-xl">
   <figure>
     <img
       src="https://i.ibb.co.com/ymqJk61Y/p1.jpg"
@@ -42,7 +42,7 @@ const Team = () => {
     
   </div>
 </div>
-<div className="card bg-base-100 w-96 shadow-xl">
+<div className="card bg-base-100 w-80 shadow-xl">
   <figure>
     <img
       src="https://i.ibb.co.com/JFWTVmxN/female.jpg"

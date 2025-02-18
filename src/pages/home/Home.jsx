@@ -5,6 +5,7 @@ import Counter from './Counter';
 import SuccessStories from './SuccessStories';
 import Member from './Member';
 import Team from './Team';
+import NewsletterSubscription from './NewsLetter';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Counter></Counter>
             <SuccessStories></SuccessStories>
             <Team></Team>
+            <NewsletterSubscription></NewsletterSubscription>
 
         </div>
     );
