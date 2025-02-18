@@ -20,7 +20,7 @@ function NavScrollExample() {
   return (
     <Navbar expand="lg" className=" sticky-top p-3 px-4 shadow-md bg-opacity-20 backdrop-blur-md mb-3">
       <Container fluid>
-        <Navbar.Brand as={Link} to="/" className='font-extrabold text-2xl md:text-3xl lg:text-4xl  animate__animated animate__backInLeft'> SoulSpark</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" className='font-extrabold text-primary text-2xl md:text-3xl lg:text-4xl  animate__animated animate__backInLeft'> SoulSpark</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
