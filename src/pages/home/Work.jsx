@@ -6,8 +6,8 @@ const HowItWorks = () => {
   return (
     <section className="py-5 bg-gradient-to-r from-green-100 to-blue-900 text-center mb-5">
       <Container>
-        <h2 className="mb-4 font-bold italic">----How It Works----</h2>
-        <p className="mb-5 text-gray-600">
+        <h2 className="mb-4 font-bold italic text-black">----How It Works----</h2>
+        <p className="mb-5 text-balance">
           Follow these three simple steps to find your perfect match.
         </p>
         <Row>

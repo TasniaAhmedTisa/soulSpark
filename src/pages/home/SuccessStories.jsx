@@ -15,7 +15,7 @@ const SuccessStories = () => {
 
   return (
     <section className="py-10 bg-gradient-to-r from-blue-900 to-green-100 my-5">
-      <h2 className="text-3xl font-bold text-center mb-10 italic animate__animated animate__rotateIn">---- Success Stories ----</h2>
+      <h2 className="font-bold text-center mb-10 italic animate__animated animate__rotateIn">---- Success Stories ----</h2>
       <div className="space-y-12 w-10/12 mx-auto">
         {stories.map((story, index) => (
           <div key={index} className="bg-white shadow-md p-6 rounded-lg border-r-8 border-red-200">

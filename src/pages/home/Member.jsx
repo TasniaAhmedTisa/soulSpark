@@ -42,8 +42,8 @@ const MemberList = () => {
     };
 
     return (
-        <section className="my-8 mb-5 mx-3">
-              <h2 className="animate__animated animate__fadeInDown font-bold text-center italic">----Premium Members----</h2>
+        <section className="mt-8 mb-5 py-5 bg-gradient-to-b from-blue-900 to-green-100">
+              <h2 className="animate__animated animate__fadeInDown font-bold text-center italic text-white">----Premium Members----</h2>
 
             <div className="flex justify-between items-center mt-4 mb-2 px-5">
             <select
